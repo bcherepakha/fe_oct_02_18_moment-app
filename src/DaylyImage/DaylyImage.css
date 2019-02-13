@@ -1,0 +1,11 @@
+.dayly-image
+{
+    width: 100%;
+    min-height: 100vh;
+    background: transparent center center no-repeat;
+    background-position: fixed;
+    background-size: cover;
+    padding: 1px;
+
+    position: relative;
+}
