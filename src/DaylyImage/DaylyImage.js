@@ -1,23 +1,26 @@
 import React from 'react';
 
+import SettingsWidget from './SettingsWidget/SettingsWidget';
+
 import './DaylyImage.css';
 
 export default class DaylyImage extends React.Component {
     state = {
-        currentImage: window.localStorage.currentImage || 'dayly',
-        featured: 'nature'
+        currentKeywords: ''
     }
 
-    changeInput = e => this.setState({
-        [e.target.name]: e.target.value
-    })
+    changeKeywords = e => {
+        const {value} = e.target;
+
+        this.setState({
+            currentKeywords: value.trim()
+        });
+    }
 
     render() {
         const {children} = this.props,
-            {currentImage, featured} = this.state,
-            imgSrc = currentImage === 'dayly'
-                ? 'https://source.unsplash.com/daily'
-                : `https://source.unsplash.com/1600x900/?${featured}`;
+            {currentKeywords} = this.state,
+            imgSrc = `https://source.unsplash.com/daily?${encodeURIComponent(currentKeywords)}`;
 
         return (
             <div style={{
@@ -27,34 +30,10 @@ export default class DaylyImage extends React.Component {
 
                 {children}
 
-                <form className='dayly-image__settings'>
-                    <div>
-                        <label>
-                            <input
-                                onChange={this.changeInput}
-                                type='radio'
-                                name='currentImage'
-                                value='dayly'
-                                checked={currentImage === 'dayly'}/> Dayly image
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            <input
-                                onChange={this.changeInput}
-                                type='radio'
-                                name='currentImage'
-                                value='random'
-                                checked={currentImage === 'random'}/> Random image
-                        </label>
-                        {currentImage === 'random' &&
-                            <input
-                                onChange={this.changeInput}
-                                name='featured'
-                                value={featured}
-                                type='text'/>}
-                    </div>
-                </form>
+                <SettingsWidget
+                    mixCls='dayly-image__settings'
+                    currentKeywords={currentKeywords}
+                    changeHandler={this.changeKeywords}/>
             </div>
         );
     }

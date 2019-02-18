@@ -7,5 +7,15 @@
     background-size: cover;
     padding: 1px;
 
+    box-sizing: border-box;
+
     position: relative;
+}
+
+.dayly-image__settings
+{
+    position: absolute;
+
+    left: 20px;
+    bottom: 20px;
 }

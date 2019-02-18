@@ -1,0 +1,59 @@
+.settings
+{
+    width: 32px;
+
+    position: relative;
+
+    display: block;
+}
+
+.settings__icon-wrapper
+{
+    width: 100%;
+
+    color: #585a58;
+}
+
+.settings__icon-wrapper:hover
+{
+    color: #06730d;
+}
+
+.settings__icon
+{
+    width: 100%;
+    display: block;
+    fill: currentColor;
+    cursor: pointer;
+}
+
+.settings__body
+{
+    position: absolute;
+
+    left: 12px;
+    bottom: calc(100% + 4px);
+    background: #333;
+
+    width: 25vw;
+
+    padding: 24px;
+
+    color: #fff;
+}
+
+.settings__form-row
+{
+    display: flex;
+}
+
+.settings__form-row-label
+{
+    flex: 0 0 25%;
+    margin-right: 8px;
+}
+
+.settings__form-row-control
+{
+    flex: 1 1 auto;
+}
