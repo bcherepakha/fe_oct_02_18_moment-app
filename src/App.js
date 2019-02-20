@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import DaylyImage from './DaylyImage/DaylyImage';
 import CurrentTime from './CurrentTime/CurrentTime';
 import Greeting from './Greeting/Greeting';
+import BeerList from './BeerList/BeerList';
 
 // <CurrentTime/>
 // <MainFocus/>
@@ -19,6 +20,7 @@ class App extends Component {
               <CurrentTime/>
               <Greeting/>
           </div>
+          <BeerList/>
       </DaylyImage>
     );
   }
