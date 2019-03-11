@@ -1,8 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './BeerList.css';
 
 export default class BeerList extends React.Component {
+    static propTypes = {
+        clientPaggination: PropTypes.bool
+    }
+
     static defaultProps = {
         clientPaggination: true
     }

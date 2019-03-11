@@ -1,8 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './CurrentTime.css';
 
 export default class CurrentTime extends React.Component {
+    static propTypes = {
+        mixCls: PropTypes.string,
+        updateTime: PropTypes.number
+    }
+
     static defaultProps = {
         updateTime: 10000
     }
@@ -16,7 +22,6 @@ export default class CurrentTime extends React.Component {
     }
 
     nextTick() {
-        console.log('nextTick');
         setTimeout(() => {
             this.setState({
                 currentTime: new Date()

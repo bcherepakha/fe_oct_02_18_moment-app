@@ -13,3 +13,8 @@ body
 
     text-align: center;
 }
+
+.app__graph
+{
+    margin: 20px;
+}

@@ -1,0 +1,22 @@
+.graph
+{
+    background: #fff;
+    display: flex;
+    padding: 18px;
+    border-radius: 8px;
+}
+
+.graph__points
+{
+    flex: 1 1 0px;
+}
+
+.graph__draw
+{
+    flex: 0 0 400px;
+}
+
+.graph__points .add-point
+{
+    
+}

@@ -1,8 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './SettingsWidget.css';
 
 export default class SettingsWidget extends React.Component {
+    static propTypes = {
+        currentKeywords: PropTypes.string,
+        changeHandler: PropTypes.func,
+        mixCls: PropTypes.string
+    }
+
     state = {
         showBody: false
     }
